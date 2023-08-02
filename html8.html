@@ -1,0 +1,55 @@
+<html>
+	<head>
+	<tittle> square root finder by bhakti </tittle>
+	<style>
+		*{ font-size;50px; font-family: Cambria;}
+		body {background-color:lightblue;
+		 width: 50%; border-radius: 30px ;}
+		h1 { background-color:
+	</style>
+	<script> 
+	function show()
+	{
+		event.preventDefault();
+		let num= document.getElementById("num");
+		let ans= document.getElementById("ans");
+		if (num.value == "")
+		{
+		alert(" number is empty");
+		ans.innerHTML ="";
+		num.focus();
+		return;
+		}
+		
+		let n= parseFloat (num.value);
+		
+		if (n <0.0)
+		{
+			alert("-ve number not allowed")
+		
+			ans.innerHTML ="";
+			num.focus();
+			num.value ="";
+			return;
+		}
+			let r= Math.sqrt(n);
+			let msg= "sqrt="+ r.toFixed(2);
+			ans.innerHTML =msg;
+			
+	}
+	</script> 
+</head>
+<body>
+<center>
+ 	<h1> Square root finder </h1>
+	<form onsubmit ="show()">
+	<input type= "number" step="any" placeholder = "enter number" id="num"/>
+	<br><br>
+	<input type ="submit" value="find square root"/>
+	<h2 id ="ans"/>
+
+</center>
+	
+</body>
+	
+</html>
